@@ -33,8 +33,9 @@ const NavbarMenu = () => {
           return (
             <a
               href={link.href}
-              class={`font-bold text-white hover:text-white/60 hover:scale-95 ${
-                currPath === link.href && "text-white/60 scale-95"
+              class={`font-bold text-white hover:text-white/60 hover:scale-95 last:bg-white last:text-bpsDarkBlue last:p-2 last:rounded-xl last:hover:bg-white/60 last:hover:text-bpsDarkBlue ${
+                currPath === link.href &&
+                "text-white/60 scale-95 last:bg-white/60 last:text-bpsDarkBlue"
               }`}
             >
               {link.name}
@@ -52,8 +53,9 @@ const NavbarMenu = () => {
           return (
             <a
               href={link.href}
-              class={`font-bold text-white hover:text-white/60 hover:scale-95 ${
-                currPath === link.href && "text-white/60 scale-95"
+              class={`font-bold text-white hover:text-white/60 hover:scale-95 last:bg-white last:text-bpsDarkBlue last:p-2 last:rounded-xl last:hover:bg-white/60 last:hover:text-bpsDarkBlue ${
+                currPath === link.href &&
+                "text-white/60 scale-95 last:bg-white/60 last:text-bpsDarkBlue"
               }`}
             >
               {link.name}
