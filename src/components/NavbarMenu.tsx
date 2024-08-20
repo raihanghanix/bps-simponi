@@ -30,6 +30,7 @@ const NavbarMenu = () => {
         }`}
       >
         {webLinks.map((link) => {
+          if (link.href === "/") return null;
           return (
             <a
               href={link.href}
@@ -50,6 +51,7 @@ const NavbarMenu = () => {
         }`}
       >
         {webLinks.map((link) => {
+          if (link.href === "/") return null;
           return (
             <a
               href={link.href}
