@@ -1,0 +1,24 @@
+---
+import Image from "astro/components/Image.astro";
+import Container from "./Container.astro";
+import NavbarMenu from "./NavbarMenu.tsx";
+import logo from "../assets/bps.png";
+---
+
+<>
+  <nav
+    id="navbar"
+    class="flex sticky top-0 left-0 z-20 flex-col gap-4 p-4 w-full text-white border-b-4 bg-bpsDarkBlue border-black/20"
+  >
+    <div>
+      <Container>
+        <div class="flex justify-between">
+          <NavbarMenu client:load />
+          <a href="/" class="flex gap-2 items-center hover:text-white/70">
+            <Image src={logo} alt="Logo BPS" width={64} />
+          </a>
+        </div>
+      </Container>
+    </div>
+  </nav>
+</>

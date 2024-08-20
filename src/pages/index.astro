@@ -1,0 +1,62 @@
+---
+import Image from "astro/components/Image.astro";
+import Container from "../components/Container.astro";
+import Layout from "../layouts/Layout.astro";
+import tree from "../assets/tree.png";
+import blob from "../assets/blobc1.svg";
+import { webLinks } from "../../utils/links";
+
+const linkColors = ["bg-bpsBlue", "bg-bpsGreen", "bg-bpsOrange"];
+---
+
+<Layout title="SIMPONI">
+  <main
+    id="home"
+    class="flex relative justify-center items-center py-8 px-4 border-b-2 border-bpsPurple lg:py-24"
+  >
+    <Image
+      src={blob}
+      alt="Gambar Background"
+      class="object-cover object-center absolute w-full h-full opacity-50 -z-10"
+    />
+    <Container>
+      <div class="flex flex-col gap-8 justify-between items-center lg:flex-row">
+        <div class="flex w-auto flex-col gap-16 min-[480px]:w-[460px]">
+          <h1
+            class="text-5xl font-bold leading-tight text-center text-bpsDarkBlue lg:text-start"
+          >
+            Sistem Monitoring Produksi Terkini
+          </h1>
+          <p class="leading-relaxed text-center text-gray-600 lg:text-justify">
+            SIMPONI merupakan website yang dirancang khusus untuk bagian
+            produksi Badan Pusat Statistik Provinsi Jambi yang digunakan untuk
+            monitoring dan evaluasi produksi di Provinsi Jambi.
+          </p>
+          <div
+            class="flex flex-col items-center justify-center gap-4 text-sm text-white min-[425px]:flex-row lg:justify-start"
+          >
+            {
+              webLinks.map((link, i) => {
+                if (link.href === "/" || link.href === "/web-entry") {
+                  return null;
+                }
+                return (
+                  <a
+                    href={link.href}
+                    class:list={[
+                      "w-full rounded-xl border-b-8 border-black/20 px-5 py-3 text-center font-bold hover:bg-opacity-80 min-[425px]:w-[114px]",
+                      [linkColors[i - 1]],
+                    ]}
+                  >
+                    {link.name}
+                  </a>
+                );
+              })
+            }
+          </div>
+        </div>
+        <Image src={tree} alt="Gambar Pohon" width={400} />
+      </div>
+    </Container>
+  </main>
+</Layout>

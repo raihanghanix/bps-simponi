@@ -1,0 +1,87 @@
+---
+import Image from "astro/components/Image.astro";
+import Container from "../components/Container.astro";
+import Layout from "../layouts/Layout.astro";
+import blob from "../assets/blobc4.svg";
+import { webLinks, pekLinks } from "../../utils/links";
+
+const linkColors = ["bg-bpsBlue", "bg-bpsGreen", "bg-bpsOrange"];
+const linkIcons = [
+  "fa-solid fa-desktop",
+  "fa-solid fa-calendar-days",
+  "fa-solid fa-cloud-arrow-up",
+];
+const spreadsheetMonev = pekLinks[0].href.slice(0, -17);
+---
+
+<Layout title="PEK | SIMPONI">
+  <main
+    id="pek"
+    class="flex relative justify-center items-center py-8 px-4 border-b-2 border-bpsOrange lg:py-24"
+  >
+    <Image
+      src={blob}
+      alt="Gambar Background"
+      class="object-cover object-center absolute w-full h-full opacity-50 -z-10"
+    />
+    <Container>
+      <div class="flex flex-col gap-8 justify-between items-center lg:flex-row">
+        <div class="flex flex-col gap-16 w-full">
+          <div class="flex flex-col gap-8 justify-between lg:flex-row">
+            <h1
+              class="text-5xl font-bold leading-tight text-center text-bpsDarkBlue lg:text-start"
+            >
+              PEK
+            </h1>
+            <div
+              class="flex flex-col gap-4 justify-center items-center text-sm text-white sm:flex-row lg:justify-start"
+            >
+              {
+                pekLinks.map((link, i) => {
+                  return (
+                    <a
+                      href={link.href}
+                      target="_blank"
+                      class:list={[
+                        "w-full rounded-xl border-b-8 border-black/20 px-5 py-3 text-center font-bold hover:bg-opacity-80 sm:w-[180px]",
+                        [linkColors[i]],
+                      ]}
+                    >
+                      <i class={`${linkIcons[i]} mr-1`} />
+                      {link.name}
+                    </a>
+                  );
+                })
+              }
+            </div>
+          </div>
+          <div class="flex flex-col">
+            <h2
+              class="py-1 px-2 w-full text-center text-white rounded-tl-xl rounded-tr-xl bg-bpsOrange"
+            >
+              Monev PEK
+            </h2>
+            <iframe
+              src={`${spreadsheetMonev}/preview?rm=minimal`}
+              width="100%"
+              height="512px"
+              class="p-1 bg-white rounded-br-xl rounded-bl-xl border border-bpsOrange"
+            ></iframe>
+            <div class="flex justify-between mt-8">
+              <a
+                href={webLinks[2].href}
+                class="font-bold text-gray-600 underline hover:text-gray-600/80"
+                ><i class="fa-solid fa-arrow-left"></i> {webLinks[2].name}</a
+              >
+              <a
+                href={webLinks[4].href}
+                class="font-bold text-gray-600 underline hover:text-gray-600/80"
+                >{webLinks[4].name} <i class="fa-solid fa-arrow-right"></i></a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </Container>
+  </main>
+</Layout>
