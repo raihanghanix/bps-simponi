@@ -52,7 +52,7 @@ export const industriLinks: ILink[] = [
   },
   {
     name: "Upload Laporan",
-    href: "#",
+    href: "https://drive.google.com/drive/folders/1OFYOA-1h3L9zC0n3jim_S0G2nhZAit5o?usp=sharing",
   },
 ];
 
@@ -67,7 +67,7 @@ export const pekLinks: ILink[] = [
   },
   {
     name: "Upload Laporan",
-    href: "#",
+    href: "https://drive.google.com/drive/folders/1AnnCzXEEtoL3v3B8kYw2-ShH1cbN8b7Z?usp=sharing",
   },
 ];
 
