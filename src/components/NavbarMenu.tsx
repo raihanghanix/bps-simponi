@@ -46,10 +46,11 @@ const NavbarMenu = () => {
       </div>
 
       <div
-        class={`flex absolute left-0 top-16 z-10 flex-col gap-4 py-4 w-full text-center bg-bpsDarkBlue ${
+        class={`absolute left-0 top-16 z-10 py-4 w-full text-center bg-bpsDarkBlue ${
           !isOpen && "hidden"
         }`}
       >
+        <div class="flex flex-col gap-4 mx-auto w-full max-w-[1024px]">
         {webLinks.map((link) => {
           if (link.href === "/") return null;
           return (
@@ -64,6 +65,7 @@ const NavbarMenu = () => {
             </a>
           );
         })}
+        </div>
       </div>
     </>
   );
